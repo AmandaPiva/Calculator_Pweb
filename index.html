@@ -23,7 +23,61 @@
             <input type="number" name="number" class="values" id="result" readonly>
         </div>
 
-        <div class="history" id="history"></div>
+        <div class="historico">
+            <button onclick="hist()" class="oper">Histórico</button>
+            <div class="history" id="history"></div>
+        </div>
     </div>
+
+    <script>
+        var resSoma = 0;
+        var resSub = 0;
+        var resMult = 0;
+        var resDivi = 0;
+    
+        function soma(){
+            var num1 = parseFloat(document.getElementById("val1").value);
+            var num2 = parseFloat(document.getElementById("val2").value);
+
+            var sum = num1 + num2;
+
+             resSoma = document.getElementById("result").value = sum;
+
+        }
+
+        function sub(){
+            var num1 = parseFloat(document.getElementById("val1").value);
+            var num2 = parseFloat(document.getElementById("val2").value);
+
+            var sub = num1 - num2;
+
+            resSub = document.getElementById("result").value = sub;
+        }
+
+        function multi(){
+            var num1 = parseFloat(document.getElementById("val1").value);
+            var num2 = parseFloat(document.getElementById("val2").value);
+
+            var mult = num1 * num2;
+
+            resMult = document.getElementById("result").value = mult;
+        }
+
+        function divi(){
+            var num1 = parseFloat(document.getElementById("val1").value);
+            var num2 = parseFloat(document.getElementById("val2").value);
+
+            var divi = num1 / num2;
+
+           resDivi = document.getElementById("result").value = divi ;
+
+        }
+
+        function hist(){
+            document.getElementById("history").innerHTML = `${resSoma} <br> ${resSub} <br> ${resMult} <br> ${resDivi}` ;
+        }
+
+
+    </script>
 </body>
 </html>

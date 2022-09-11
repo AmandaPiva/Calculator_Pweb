@@ -73,6 +73,7 @@ h1{
     margin-left: 20%;
 
     background: linear-gradient(to right, #9F66FF, #DFCBFF);
+    cursor: pointer;
 
     border-style: none;
     border-radius: 3px;
@@ -81,6 +82,20 @@ h1{
     font-size: 20px;
 }
 
+.historico{
+    display: flex;
+    flex-direction: column;
+
+    font-size: 20px;
+}
+
+.history{
+    display: flex;
+    flex-direction: column;
+    margin-left:45%;
+    align-items: center;
+    margin-top: 10%;
+}
 
 
 
