@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
 </head>
 <body>
@@ -14,12 +15,12 @@
             <input type="number" name="number" id="val1" class="values">
             <input type="number" name="number" id="val2" class="values">
 
-            <button onclick="soma()" class="sum">+</button>
-            <button onclick="sub()" class="sub">-</button>
-            <button onclick="multi()" class="mult">*</button>
-            <button onclick="divi()" class="divi">/</button>
+            <button onclick="soma()" class="oper">+</button>
+            <button onclick="sub()" class="oper">-</button>
+            <button onclick="multi()" class="oper">*</button>
+            <button onclick="divi()" class="oper">/</button>
 
-            <input type="number" name="number" id="result" readonly>
+            <input type="number" name="number" class="values" id="result" readonly>
         </div>
 
         <div class="history" id="history"></div>
