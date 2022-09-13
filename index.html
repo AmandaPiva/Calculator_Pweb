@@ -25,12 +25,21 @@
         </div>
 
         <div class="calcule">
-            <button onclick="calcular()" class="oper">Calcule</button>
+            <button onclick="limpe()" class="oper">Limpar</button>
             <div class="history" id="history"></div>
         </div>
     </div>
 
     <script>
+        function limpe(){
+           for(var i = 0; i < 2; i++){
+            document.getElementsByTagName("input")[0].value = "";
+            document.getElementsByTagName("input")[1].value = "";
+            document.getElementsByTagName("input")[2].value = "";
+           }
+            
+            }
+
        function calcular(op){
         var num1 = parseFloat(document.getElementById("val1").value);
         var num2 = parseFloat(document.getElementById("val2").value);
@@ -41,6 +50,8 @@
                     sum = num1 + num2;
 
                     document.getElementById("result").value = sum;
+                    document.getElementById("history").innerHTML += "<h1>" +sum +"</h1>";
+                    
                 break;
 
                 case '-':
@@ -48,6 +59,7 @@
                     sub = num1 - num2;
 
                     document.getElementById("result").value = sub;
+                    document.getElementById("history").innerHTML += "<h1>" +sub +"</h1>";
                 break;
 
                 case '*':
@@ -55,6 +67,7 @@
                     mult = num1 * num2;
 
                     document.getElementById("result").value = mult;
+                    document.getElementById("history").innerHTML += "<h1>" +mult +"</h1>";
                 break;
 
                 case '/':
@@ -62,9 +75,11 @@
                     divi = num1 / num2;
 
                     document.getElementById("result").value = divi;
+                    document.getElementById("history").innerHTML += "<h1>" +divi +"</h1>";
                 break;
             }
 
+            
        }
     </script>
 </body>
