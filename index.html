@@ -15,69 +15,57 @@
             <input type="number" name="number" id="val1" class="values">
             <input type="number" name="number" id="val2" class="values">
 
-            <button onclick="soma()" class="oper">+</button>
-            <button onclick="sub()" class="oper">-</button>
-            <button onclick="multi()" class="oper">*</button>
-            <button onclick="divi()" class="oper">/</button>
+            <button onclick="calcular('+')" class="oper">+</button>
+            <button onclick="calcular('-')" class="oper">-</button>
+            <button onclick="calcular('*')" class="oper">*</button>
+            <button onclick="calcular('/')" class="oper">/</button>
+
 
             <input type="number" name="number" class="values" id="result" readonly>
         </div>
 
-        <div class="historico">
-            <button onclick="hist()" class="oper">Histórico</button>
+        <div class="calcule">
+            <button onclick="calcular()" class="oper">Calcule</button>
             <div class="history" id="history"></div>
         </div>
     </div>
 
     <script>
-        var resSoma = 0;
-        var resSub = 0;
-        var resMult = 0;
-        var resDivi = 0;
-    
-        function soma(){
-            var num1 = parseFloat(document.getElementById("val1").value);
-            var num2 = parseFloat(document.getElementById("val2").value);
+       function calcular(op){
+        var num1 = parseFloat(document.getElementById("val1").value);
+        var num2 = parseFloat(document.getElementById("val2").value);
 
-            var sum = num1 + num2;
+            switch(op){
+                case '+':
+                    var sum =0; 
+                    sum = num1 + num2;
 
-             resSoma = document.getElementById("result").value = sum;
+                    document.getElementById("result").value = sum;
+                break;
 
-        }
+                case '-':
+                    var sub =0; 
+                    sub = num1 - num2;
 
-        function sub(){
-            var num1 = parseFloat(document.getElementById("val1").value);
-            var num2 = parseFloat(document.getElementById("val2").value);
+                    document.getElementById("result").value = sub;
+                break;
 
-            var sub = num1 - num2;
+                case '*':
+                    var mult =0; 
+                    mult = num1 * num2;
 
-            resSub = document.getElementById("result").value = sub;
-        }
+                    document.getElementById("result").value = mult;
+                break;
 
-        function multi(){
-            var num1 = parseFloat(document.getElementById("val1").value);
-            var num2 = parseFloat(document.getElementById("val2").value);
+                case '/':
+                    var divi =0; 
+                    divi = num1 / num2;
 
-            var mult = num1 * num2;
+                    document.getElementById("result").value = divi;
+                break;
+            }
 
-            resMult = document.getElementById("result").value = mult;
-        }
-
-        function divi(){
-            var num1 = parseFloat(document.getElementById("val1").value);
-            var num2 = parseFloat(document.getElementById("val2").value);
-
-            var divi = num1 / num2;
-
-           resDivi = document.getElementById("result").value = divi ;
-
-        }
-
-        function hist(){
-            document.getElementById("history").innerHTML = `${resSoma} <br> ${resSub} <br> ${resMult} <br> ${resDivi}` ;
-        }
-
-
+       }
     </script>
 </body>
 </html>
